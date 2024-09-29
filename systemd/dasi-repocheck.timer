@@ -1,0 +1,11 @@
+[Unit]
+Description=Setup correct DASI repository
+
+[Timer]
+#OnCalendar=*-*-* *:00:00
+RandomizedDelaySec=10m
+OnBootSec=5m
+Persistent=true
+
+[Install]
+WantedBy=timers.target
