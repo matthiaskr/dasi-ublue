@@ -1,5 +1,10 @@
 #!/bin/sh
 
+set -e
+
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak remote-delete fedora || true
+
 for i in edu.mit.Scratch org.libreoffice.LibreOffice com.vscodium.codium org.gimp.GIMP org.inkscape.Inkscape org.videolan.VLC
 do
     if ! ( flatpak list | grep -q $i )
