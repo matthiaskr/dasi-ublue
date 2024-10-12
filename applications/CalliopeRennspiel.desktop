@@ -1,0 +1,10 @@
+[Desktop Entry]
+Categories=Education;
+Exec=/usr/bin/CalliopeRennspiel
+Terminal=true
+Type=Application
+StartupNotify=false
+Name=Calliope Rennspiel GUI
+GenericName=GUI zu dem Ki in Schulen Calliope Rennspiel
+Keywords=education;ai;python;
+Icon=ibus-engine

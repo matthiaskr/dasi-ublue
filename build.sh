@@ -22,6 +22,8 @@ rpm-ostree install \
 cd /usr/share && \
 	git clone https://github.com/telekom/ki-in-schulen.git
 
+pip install --no-user pynput>=1.7.6 orange3>=3.34.1
+
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
 
