@@ -52,6 +52,7 @@ COPY systemd/* /etc/systemd/system/
 COPY sbin/* /usr/sbin/
 COPY bin/* /usr/bin/
 COPY applications/* /usr/share/applications/
+COPY rules.d/* /lib/udev/rules.d/
 COPY build.sh /tmp/build.sh
 
 RUN mkdir -p /var/lib/alternatives && \

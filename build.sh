@@ -19,8 +19,8 @@ rpm-ostree install \
 	python3-pyserial python3-pygame python3-scikit-learn python3-pandas python3-wheel \
 	git
 
-cd /usr/share && \
-	git clone https://github.com/telekom/ki-in-schulen.git
+git clone https://github.com/telekom/ki-in-schulen.git /usr/share/ki-in-schulen
+sed -i 's,/usr/local/share/ki-in-schulen/,/usr/share/ki-in-schulen/,' /usr/share/ki-in-schulen/Calliope-Rennspiel/Python/ki-gui-lin.py
 
 pip install --root /usr/lib --no-user 'pynput>=1.7.6' 'orange3>=3.34.1'
 
