@@ -13,7 +13,14 @@ RELEASE="$(rpm -E %fedora)"
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-rpm-ostree install screen python3-pip
+rpm-ostree install \
+	screen \
+	python3-devel python3-tkinter gcc g++ kernel-headers xorg-x11-proto-devel unzip python3-pip \
+	python3-pyserial python3-pygame python3-scikit-learn python3-pandas python3-wheel \
+	git
+
+cd /usr/share && \
+	git clone https://github.com/telekom/ki-in-schulen.git
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
