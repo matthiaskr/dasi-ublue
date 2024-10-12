@@ -22,7 +22,7 @@ rpm-ostree install \
 git clone https://github.com/telekom/ki-in-schulen.git /usr/share/ki-in-schulen
 sed -i 's,/usr/local/share/ki-in-schulen/,/usr/share/ki-in-schulen/,' /usr/share/ki-in-schulen/Calliope-Rennspiel/Python/ki-gui-lin.py
 
-pip install --root /usr/lib --no-user 'pynput>=1.7.6' 'orange3>=3.34.1'
+pip install --prefix /usr --no-user 'pynput>=1.7.6' 'orange3>=3.34.1'
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
