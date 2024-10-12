@@ -2,9 +2,15 @@
 
 set -e
 
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --system --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-for i in edu.mit.Scratch org.libreoffice.LibreOffice com.vscodium.codium org.gimp.GIMP org.inkscape.Inkscape org.videolan.VLC
+for i in edu.mit.Scratch org.libreoffice.LibreOffice com.vscodium.codium \
+	 org.gimp.GIMP org.inkscape.Inkscape org.videolan.VLC \
+	 org.gnome.Calculator org.gnome.Calendar org.gnome.Characters \
+	 org.gnome.Connections org.gnome.Contacts org.gnome.Evince \
+	 org.gnome.Logs org.gnome.Loupe org.gnome.Maps \
+	 org.gnome.Snapshot org.gnome.TextEditor org.gnome.Weather \
+	 org.gnome.baobab org.gnome.clocks org.gnome.font-viewer
 do
     if ! ( flatpak list | grep -q $i )
     then
