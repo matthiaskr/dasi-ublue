@@ -28,3 +28,8 @@ Möchte man sicherstellen, dass die Version auf einem Notebook aktuell ist, kann
 * Manchmal funktioniert der erste Login nicht und man kommt direkt zur Login-Maske zurück.
   In diesem Fall einfach erneut einloggen.
   Der zweite Versuch sollte funktionieren.
+* Datenträger werden nicht automatisch eingebunden.
+  Das gilt **auch für Calliope**.
+  Wenn man das KI-Rennspiel verwendet, sollte man immer den Dateimanager offen haben.
+  Bevor man einen Calliope neuprogrammiert, klickt man einfach einmal auf den Datenträger mit Namen *MINI*.
+  Dadurch wird er eingehängt und die Rennspiel-GUI ist in der Lage den Calliope zu programmieren.
