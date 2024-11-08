@@ -2,7 +2,7 @@
 
 set -e
 
-sudo flatpak update --system -y
-flatpak update --user -y
+sudo dbus-run-session flatpak update --system -y
+dbus-run-session flatpak update --user -y
 
 sudo dasi-flatpak-install

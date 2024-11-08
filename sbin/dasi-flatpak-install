@@ -2,7 +2,7 @@
 
 set -e
 
-flatpak remote-add --system --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+dbus-run-session flatpak remote-add --system --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 for i in edu.mit.Scratch org.libreoffice.LibreOffice com.vscodium.codium \
 	 org.gimp.GIMP org.inkscape.Inkscape org.videolan.VLC \
@@ -14,6 +14,6 @@ for i in edu.mit.Scratch org.libreoffice.LibreOffice com.vscodium.codium \
 do
     if ! ( flatpak list | grep -q $i )
     then
-        flatpak install --system -y flathub $i
+        dbus-run-session flatpak install --system -y flathub $i
     fi
 done
