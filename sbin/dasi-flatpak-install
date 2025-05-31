@@ -10,7 +10,8 @@ for i in edu.mit.Scratch org.libreoffice.LibreOffice com.vscodium.codium \
 	 org.gnome.Connections org.gnome.Contacts org.gnome.Evince \
 	 org.gnome.Logs org.gnome.Loupe org.gnome.Maps \
 	 org.gnome.Snapshot org.gnome.TextEditor org.gnome.Weather \
-	 org.gnome.baobab org.gnome.clocks org.gnome.font-viewer
+	 org.gnome.baobab org.gnome.clocks org.gnome.font-viewer \
+	 org.thonny.Thonny org.jupyter.JupyterLab
 do
     if ! ( flatpak list | grep -q $i )
     then
