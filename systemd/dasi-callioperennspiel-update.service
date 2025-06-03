@@ -1,0 +1,8 @@
+[Unit]
+Description=Install flatpak packages for DASI
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/dasi-callioperennspiel-update

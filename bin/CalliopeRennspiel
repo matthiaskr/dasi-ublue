@@ -3,4 +3,7 @@
 mkdir -p $HOME/CalliopeRennspiel $HOME/CalliopeRennspiel/csv-rohdaten $HOME/CalliopeRennspiel/modelle
 cd $HOME/CalliopeRennspiel
 
-exec python3 /usr/share/ki-in-schulen/Calliope-Rennspiel/Python/ki-gui-lin.py
+xhost +si:localuser:$USER
+trap "xhost -si:localuser:$USER" EXIT
+
+python3 /usr/share/ki-in-schulen/Calliope-Rennspiel/Python/ki-gui-lin.py
