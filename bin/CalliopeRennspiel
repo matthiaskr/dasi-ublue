@@ -6,4 +6,4 @@ cd $HOME/CalliopeRennspiel
 xhost +si:localuser:$USER
 trap "xhost -si:localuser:$USER" EXIT
 
-python3 /usr/share/ki-in-schulen/Calliope-Rennspiel/Python/ki-gui-lin.py
+distrobox enter callioperennspiel -- python3 /usr/local/share/ki-in-schulen/Calliope-Rennspiel/Python/ki-gui-lin.py
