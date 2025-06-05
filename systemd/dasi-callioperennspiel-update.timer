@@ -1,0 +1,11 @@
+[Unit]
+Description=Install/update Calliope Rennspiel as distrobox
+
+[Timer]
+#OnCalendar=*-*-* *:00:00
+RandomizedDelaySec=10m
+OnBootSec=5m
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -6,3 +6,5 @@ sudo dbus-run-session flatpak update --system -y
 dbus-run-session flatpak update --user -y
 
 sudo dasi-flatpak-install
+
+dasi-callioperennspiel-update

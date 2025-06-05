@@ -33,3 +33,6 @@ Möchte man sicherstellen, dass die Version auf einem Notebook aktuell ist, kann
   Wenn man das KI-Rennspiel verwendet, sollte man immer den Dateimanager offen haben.
   Bevor man einen Calliope neuprogrammiert, klickt man einfach einmal auf den Datenträger mit Namen *MINI*.
   Dadurch wird er eingehängt und die Rennspiel-GUI ist in der Lage den Calliope zu programmieren.
+* Aus dem Home-Verzeichnis sollte vor jedem Rennspiel-Workshop das Verzeichnis
+  `CalliopeRennspiel` gelöscht werden.  Dies ist auch bei Installationen vor
+  05.06.2025 notwendig, um alte inkompatibele Konfiguration zu entfernen.
