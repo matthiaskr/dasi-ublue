@@ -11,7 +11,7 @@ for i in edu.mit.Scratch org.libreoffice.LibreOffice com.vscodium.codium \
 	 org.gnome.Logs org.gnome.Loupe org.gnome.Maps \
 	 org.gnome.Snapshot org.gnome.TextEditor org.gnome.Weather \
 	 org.gnome.baobab org.gnome.clocks org.gnome.font-viewer \
-	 org.thonny.Thonny org.jupyter.JupyterLab
+	 org.thonny.Thonny org.jupyter.JupyterLab cc.arduino.IDE2
 do
     if ! ( flatpak list | grep -q $i )
     then
