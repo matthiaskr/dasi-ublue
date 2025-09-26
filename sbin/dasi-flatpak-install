@@ -2,7 +2,8 @@
 
 set -e
 
-dbus-run-session flatpak remote-add --system --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+dbus-run-session flatpak remote-add --system --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo || true
+dbus-run-session flatpak remote-modify --system --enable flathub || true
 
 for i in edu.mit.Scratch org.libreoffice.LibreOffice com.vscodium.codium \
 	 org.gimp.GIMP org.inkscape.Inkscape org.videolan.VLC \
