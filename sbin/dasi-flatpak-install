@@ -13,7 +13,8 @@ for i in edu.mit.Scratch org.libreoffice.LibreOffice com.vscodium.codium \
 	 org.gnome.Snapshot org.gnome.TextEditor org.gnome.Weather \
 	 org.gnome.baobab org.gnome.clocks org.gnome.font-viewer \
 	 org.thonny.Thonny org.jupyter.JupyterLab cc.arduino.IDE2 \
-	 org.greenfoot.Greenfoot
+	 org.greenfoot.Greenfoot \
+     ch.openboard.OpenBoard
 do
     if ! ( flatpak list | grep -q $i )
     then
