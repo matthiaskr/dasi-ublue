@@ -1,5 +1,11 @@
 # DIGITAL@School Notebook Image
 
+## Änderungen
+
+* **2025-10-01**
+  * Manuell installierte Software wird automatisch gelöscht (siehe auch unten).
+  * Alle Zusatzsoftware wird aus dem *flathub* Repository installiert.
+
 ## Installation
 
 1. Lade Fedora Silverblue (oder ein anderes Fedora Atomic) Installationsmedium von [hier](https://getfedora.org) herunter und folge der Installationsanleitung.
