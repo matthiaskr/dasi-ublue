@@ -1,5 +1,11 @@
 # DIGITAL@School Notebook Image
 
+## Änderungen
+
+* **2025-10-01**
+  * Manuell installierte Software wird automatisch gelöscht (siehe auch unten).
+  * Alle Zusatzsoftware wird aus dem *flathub* Repository installiert.
+
 ## Installation
 
 1. Lade Fedora Silverblue (oder ein anderes Fedora Atomic) Installationsmedium von [hier](https://getfedora.org) herunter und folge der Installationsanleitung.
@@ -22,6 +28,24 @@ Möchte man sicherstellen, dass die Version auf einem Notebook aktuell ist, kann
 1. `rpm-ostree update` in einem Terminal ausführen.
 2. Computer neustarten.
 3. `dasi-update` in einem Terminal ausführen.
+
+## Selber Software installieren
+
+Software ann von [*flathub*](https://flathub.org) installiert werden.
+Dazu muss erst einmal das System konfiguriert werden, dass manuell installiere
+Software nicht automatisch wieder entfernt wird.
+Dazu
+
+1. ein Terminal-Fenster öffnen (Konsole) und
+2. `dasi-suspend-removal` ausführen.
+
+Damit wird das automatische Löschen von manuell installierten Paketen für 30 Tage verhindert.
+Das System kann vorzeitig mittels `dasi-enable-removal` wieder in den ursprünglichen Zustand versetzt werden.
+
+Nach dem `dasi-suspend-removal` ausgeführt wurde, können Softwarepakete von
+[*flathub*](https://flathub.org) installiert werden.
+Dazu einfach der Anleitung auf der Webseite folgen.
+Dabei bitte die Dokumentation insbesondere zur Vertrauenswürdigkeit einzelner Pakete beachten.
 
 ## Bekannte Probleme
 

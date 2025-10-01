@@ -1,23 +1,42 @@
 #!/bin/sh
 
-set -e
+REMOVAL_FILE=/var/.suspend-flatpak-removal
+REMOVAL_AGE=$((60*60*24*30))
 
-dbus-run-session flatpak remote-add --system --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo || true
-dbus-run-session flatpak remote-modify --system --enable flathub || true
+pkglist=${PACKAGES_FILE:-/usr/share/packages.lst}
 
-for i in edu.mit.Scratch org.libreoffice.LibreOffice com.vscodium.codium \
-	 org.gimp.GIMP org.inkscape.Inkscape org.videolan.VLC \
-	 org.gnome.Calculator org.gnome.Calendar org.gnome.Characters \
-	 org.gnome.Connections org.gnome.Contacts org.gnome.Evince \
-	 org.gnome.Logs org.gnome.Loupe org.gnome.Maps \
-	 org.gnome.Snapshot org.gnome.TextEditor org.gnome.Weather \
-	 org.gnome.baobab org.gnome.clocks org.gnome.font-viewer \
-	 org.thonny.Thonny org.jupyter.JupyterLab cc.arduino.IDE2 \
-	 org.greenfoot.Greenfoot \
-     ch.openboard.OpenBoard
+dbus-run-session flatpak remote-add --system --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+dbus-run-session flatpak remote-modify --system --enable flathub
+
+for i in $(dbus-run-session flatpak pin --system)
+do
+    dbus-run-session flatpak pin --system --remove
+done
+for i in $(dbus-run-session flatpak list --system --columns=application,origin --app | grep 'fedora$' | awk '{print $1}')
+do
+    dbus-run-session flatpak --system remove -y
+done
+for i in $(dbus-run-session flatpak list --system --columns=application,origin | grep 'fedora$' | awk '{print $1}')
+do
+    dbus-run-session flatpak --system remove -y
+done
+dbus-run-session flatpak remote-modify --system --disable fedora
+
+if [ ! -f $REMOVAL_FILE ] || [ "$(cat $REMOVAL_FILE)" -lt $(( $(date '+%s') - $REMOVAL_AGE )) ]
+then
+    for i in $( (dbus-run-session flatpak list --app --columns application; cat $pkglist ; cat $pkglist ) | sort | uniq -u)
+    do
+        dbus-run-session flatpak --system remove -y $i
+    done
+fi
+dbus-run-session flatpak remove --system --unused -y
+
+for i in $(cat $pkglist)
 do
     if ! ( flatpak list | grep -q $i )
     then
         dbus-run-session flatpak install --system -y flathub $i
     fi
 done
+
+dbus-run-session flatpak upgrade --system -y
