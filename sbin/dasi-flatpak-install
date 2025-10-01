@@ -1,7 +1,6 @@
 #!/bin/sh
 
 pkglist=${PACKAGES_FILE:-/usr/share/packages.lst}
-# TODO: do not remove unwanted packages everytime
 
 dbus-run-session flatpak remote-add --system --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 dbus-run-session flatpak remote-modify --system --enable flathub
@@ -24,9 +23,10 @@ if [ ! -z "$CLEAN_UNWANTED_PACKAGES" ]
 then
     for i in $( (dbus-run-session flatpak list --app --columns application; cat $pkglist ; cat $pkglist ) | sort | uniq -u)
     do
-        dbus-run-session flatpak --system remove -y
+        dbus-run-session flatpak --system remove -y $i
     done
 fi
+dbus-run-session flatpak remove --system --unused -y
 
 for i in $(cat $pkglist)
 do
@@ -35,3 +35,5 @@ do
         dbus-run-session flatpak install --system -y flathub $i
     fi
 done
+
+dbus-run-session flatpak upgrade --system -y
