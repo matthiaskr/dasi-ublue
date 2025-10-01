@@ -5,6 +5,6 @@ set -e
 sudo dbus-run-session flatpak update --system -y
 dbus-run-session flatpak update --user -y
 
-sudo env CLEAN_UNWANTED_PACKAGES=${CLEAN_UNWANTED_PACKAGES} dasi-flatpak-install
+sudo dasi-flatpak-install
 
 dasi-callioperennspiel-update

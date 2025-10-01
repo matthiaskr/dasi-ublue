@@ -1,5 +1,8 @@
 #!/bin/sh
 
+REMOVAL_FILE=/var/.suspend-flatpak-removal
+REMOVAL_AGE=$((60*60*24*30))
+
 pkglist=${PACKAGES_FILE:-/usr/share/packages.lst}
 
 dbus-run-session flatpak remote-add --system --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -19,7 +22,7 @@ do
 done
 dbus-run-session flatpak remote-modify --system --disable fedora
 
-if [ ! -z "$CLEAN_UNWANTED_PACKAGES" ]
+if [ ! -f $REMOVAL_FILE ] || [ "$(cat $REMOVAL_FILE)" -lt $(( $(date '+%s') - $REMOVAL_AGE )) ]
 then
     for i in $( (dbus-run-session flatpak list --app --columns application; cat $pkglist ; cat $pkglist ) | sort | uniq -u)
     do

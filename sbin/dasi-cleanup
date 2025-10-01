@@ -1,3 +1,0 @@
-#!/bin/sh
-
-env CLEAN_UNWANTED_PACKAGES=true dasi-update

@@ -23,6 +23,24 @@ Möchte man sicherstellen, dass die Version auf einem Notebook aktuell ist, kann
 2. Computer neustarten.
 3. `dasi-update` in einem Terminal ausführen.
 
+## Selber Software installieren
+
+Software ann von [*flathub*](https://flathub.org) installiert werden.
+Dazu muss erst einmal das System konfiguriert werden, dass manuell installiere
+Software nicht automatisch wieder entfernt wird.
+Dazu
+
+1. ein Terminal-Fenster öffnen (Konsole) und
+2. `dasi-suspend-removal` ausführen.
+
+Damit wird das automatische Löschen von manuell installierten Paketen für 30 Tage verhindert.
+Das System kann vorzeitig mittels `dasi-enable-removal` wieder in den ursprünglichen Zustand versetzt werden.
+
+Nach dem `dasi-suspend-removal` ausgeführt wurde, können Softwarepakete von
+[*flathub*](https://flathub.org) installiert werden.
+Dazu einfach der Anleitung auf der Webseite folgen.
+Dabei bitte die Dokumentation insbesondere zur Vertrauenswürdigkeit einzelner Pakete beachten.
+
 ## Bekannte Probleme
 
 * Manchmal funktioniert der erste Login nicht und man kommt direkt zur Login-Maske zurück.
