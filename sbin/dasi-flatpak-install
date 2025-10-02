@@ -10,15 +10,15 @@ dbus-run-session flatpak remote-modify --system --enable flathub
 
 for i in $(dbus-run-session flatpak pin --system)
 do
-    dbus-run-session flatpak pin --system --remove
+    dbus-run-session flatpak pin --system --remove $i
 done
 for i in $(dbus-run-session flatpak list --system --columns=application,origin --app | grep 'fedora$' | awk '{print $1}')
 do
-    dbus-run-session flatpak --system remove -y
+    dbus-run-session flatpak --system remove -y $i
 done
 for i in $(dbus-run-session flatpak list --system --columns=application,origin | grep 'fedora$' | awk '{print $1}')
 do
-    dbus-run-session flatpak --system remove -y
+    dbus-run-session flatpak --system remove -y $i
 done
 dbus-run-session flatpak remote-modify --system --disable fedora
 
