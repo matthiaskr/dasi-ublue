@@ -14,11 +14,8 @@ RELEASE="$(rpm -E %fedora)"
 
 # this installs a package from fedora repos
 rpm-ostree install \
-	screen #\
-	#python3-devel python3-tkinter gcc g++ kernel-headers xorg-x11-proto-devel unzip python3-pip \
-	#python3-pyserial python3-pygame python3-scikit-learn python3-pandas python3-wheel \
-        #rust cargo \
-	#git
+	screen \
+	distrobox
 
 #git clone https://github.com/telekom/ki-in-schulen.git /usr/share/ki-in-schulen
 #sed -i 's,/usr/local/share/ki-in-schulen/,/usr/share/ki-in-schulen/,' /usr/share/ki-in-schulen/Calliope-Rennspiel/Python/ki-gui-lin.py
