@@ -54,7 +54,7 @@ COPY bin/* /usr/bin/
 COPY applications/* /usr/share/applications/
 COPY rules.d/* /lib/udev/rules.d/
 COPY build.sh /tmp/build.sh
-COPY share/* /usr/share/
+COPY share/ /usr/share/
 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
