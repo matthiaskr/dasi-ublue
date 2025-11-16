@@ -1,0 +1,67 @@
+body {
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+button.control {
+    width: 100%;
+}
+
+select.control {
+    width: 100%;
+    text-align: center;
+}
+
+table.control {
+    width: 100%;
+}
+
+table.control td {
+    width: 25%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+table.control td.data-out {
+    text-align: left;
+}
+
+canvas.network {
+    padding: 10px;
+}
+
+canvas.actfunc {
+    padding: 5px;
+}
+
+div.output {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+div.network-output {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+div.network-actfuncs {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

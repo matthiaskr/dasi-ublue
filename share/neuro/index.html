@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simulation neuronaler Netze</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" charset="utf-8" src="js/neuro-web.js"></script>
+    </head>
+    <body onload="main()">
+        <div id="continuous">
+            <h1>Simulation neuronaler Netze</h1>
+            <table class="control">
+                <tr>
+                    <td>
+                        <select class="control" id="use-cases"></select>
+                    </td>
+                    <td>
+                        <select class="control" id="network-sizes"></select>
+                    </td>
+                    <td>
+                        <select class="control" id="etas"></select>
+                    </td>
+                    <td>
+                        <button class="control" id="train-button">Netzwerk trainieren</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select class="control" id="hidden-neurons"></select>
+                    </td>
+                    <td>
+                        <select class="control" id="output-neurons"></select>
+                    </td>
+                    <td>
+                        <button class="control" id="reset-button">Reset</button>
+                    </td>
+                    <td class="data-out" id="train-info">
+                    </td>
+                </tr>
+            </table>
+            <h2>Netzwerkausgabe</h2>
+            <div class="output">
+                <canvas id="function-output" width="1280" height="400"></canvas>
+            </div>
+            <h2>Netzwerkaufbau</h2>
+            <div class="network-output">
+                <canvas class="network" id="network-canvas" width="940" height="640"></canvas>
+                <div class="network-actfuncs">
+                    <canvas class="actfunc" id="network-input" width="200" height="200"></canvas>
+                    <canvas class="actfunc" id="network-hidden" width="200" height="200"></canvas>
+                    <canvas class="actfunc" id="network-output" width="200" height="200"></canvas>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

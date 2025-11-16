@@ -1,0 +1,10 @@
+[Desktop Entry]
+Categories=Education;
+Exec=/usr/bin/xdg-open /usr/share/neuro/index.html
+Terminal=false
+Type=Application
+StartupNotify=false
+Name=Simulation Neuronaler Netze
+GenericName=Simulation Neuronaler Netze
+Keywords=education;ai;python;
+Icon=ibus-engine
