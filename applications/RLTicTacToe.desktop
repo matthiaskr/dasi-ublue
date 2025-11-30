@@ -1,0 +1,10 @@
+[Desktop Entry]
+Categories=Education;
+Exec=/usr/bin/xdg-open /usr/share/tictactoe/index.html
+Terminal=false
+Type=Application
+StartupNotify=false
+Name=Reinforcement Learning von Tic-Tac-Toe
+GenericName=Reinforcement Learning von Tic-Tac-Toe
+Keywords=education;ai;
+Icon=ibus-engine

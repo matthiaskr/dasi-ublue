@@ -6,5 +6,5 @@ Type=Application
 StartupNotify=false
 Name=Simulation Neuronaler Netze
 GenericName=Simulation Neuronaler Netze
-Keywords=education;ai;python;
+Keywords=education;ai;
 Icon=ibus-engine

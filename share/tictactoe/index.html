@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tic Tac Toe</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" charset="utf-8" src="js/tictactoe-web.js"></script>
+    </head>
+    <body onload="main()">
+        <h1>Reinforcements Learning von Tic Tac Toe</h1>
+        <table class="control">
+            <tr>
+                <th></th>
+                <th></th>
+                <th>Spiele/s</th>
+                <th>Spiele</th>
+                <th>Siege</th>
+                <th>Unentschieden</th>
+                <th>Niederlagen</th>
+                <th>Punkte/Spiel</th>
+            </tr>
+            <tr>
+                <td></td>
+                <th class="thline">Kleines Netz vs. Zufall:</th>
+                <td class="data-out" id="info-small-gps"></td>
+                <td class="data-out" id="info-small-games"></td>
+                <td class="data-out" id="info-small-win"></td>
+                <td class="data-out" id="info-small-tie"></td>
+                <td class="data-out" id="info-small-loss"></td>
+                <td class="data-out" id="info-small-points"></td>
+            </tr>
+            <tr>
+                <td><button class="control" id="train-button">Start/Stop</button></td>
+                <th class="thline">Großes Netz vs. Zufall:</th>
+                <td class="data-out" id="info-big-gps"></td>
+                <td class="data-out" id="info-big-games"></td>
+                <td class="data-out" id="info-big-win"></td>
+                <td class="data-out" id="info-big-tie"></td>
+                <td class="data-out" id="info-big-loss"></td>
+                <td class="data-out" id="info-big-points"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <th class="thline">Einfacher Ansatz vs. Zufall:</th>
+                <td class="data-out" id="info-simple-gps"></td>
+                <td class="data-out" id="info-simple-games"></td>
+                <td class="data-out" id="info-simple-win"></td>
+                <td class="data-out" id="info-simple-tie"></td>
+                <td class="data-out" id="info-simple-loss"></td>
+                <td class="data-out" id="info-simple-points"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <th class="thline">Einfacher Ansatz vs. selbst:</th>
+                <td class="data-out" id="info-self-gps"></td>
+                <td class="data-out" id="info-self-games"></td>
+                <td class="data-out" id="info-self-win"></td>
+                <td class="data-out" id="info-self-tie"></td>
+                <td class="data-out" id="info-self-loss"></td>
+                <td class="data-out" id="info-self-points"></td>
+            </tr>
+        </table>
+        <h2>Spielfelder</h2>
+        <div class="boards">
+            <div class="output">
+                <h3>Kleines Netz vs. Zufall</h3>
+                <canvas class="board" id="board-small" width="302" height="302"></canvas>
+            </div>
+            <div class="output">
+                <h3>Großes Netz vs. Zufall</h3>
+                <canvas class="board" id="board-big" width="302" height="302"></canvas>
+            </div>
+            <div class="output">
+                <h3>Einfacher Ansatz vs. Zufall</h3>
+                <canvas class="board" id="board-simple" width="302" height="302"></canvas>
+            </div>
+            <div class="output">
+                <h3>Einfacher Ansatz vs. selbst</h3>
+                <canvas class="board" id="board-self" width="302" height="302"></canvas>
+            </div>
+        </div>
+    </body>
+</html>

@@ -10,6 +10,10 @@ h2 {
     text-align: center;
 }
 
+h3 {
+    text-align: center;
+}
+
 hr {
     border-color: #f0f0f0;
     width: 95%;
@@ -70,20 +74,30 @@ select.control:hover {
 }
 
 table.control {
-    width: 100%;
+    /* width: 100%; */
 }
 
 table.control th {
-    width: 25%;
+    /* width: 25%; */
     padding-top: 2px;
     padding-bottom: 2px;
     padding-left: 10px;
     padding-right: 10px;
+    text-align: center;
+}
+
+table.control th.thline {
+    /* width: 25%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px; */
     text-align: right;
 }
 
 table.control td {
-    width: 25%;
+    width: 12%;
+    /* width: 25%; */
     padding-top: 2px;
     padding-bottom: 2px;
     padding-left: 10px;
@@ -92,7 +106,7 @@ table.control td {
 }
 
 table.control td.description {
-    width: 50%;
+    /* width: 50%; */
     text-align: left;
 }
 
@@ -100,32 +114,22 @@ table.control td.data-out {
     text-align: center;
 }
 
-canvas.network {
+canvas.board {
     padding: 10px;
 }
 
-canvas.actfunc {
-    padding: 5px;
-}
-
-div.output {
+div.boards {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 100%;
 }
 
-div.network-output {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-div.network-actfuncs {
-    width: 200px;
+div.output {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }

@@ -11,31 +11,65 @@
             <h1>Simulation neuronaler Netze</h1>
             <table class="control">
                 <tr>
-                    <td>
-                        <select class="control" id="use-cases"></select>
-                    </td>
-                    <td>
-                        <select class="control" id="network-sizes"></select>
-                    </td>
-                    <td>
-                        <select class="control" id="etas"></select>
-                    </td>
-                    <td>
-                        <button class="control" id="train-button">Netzwerk trainieren</button>
-                    </td>
+                    <th>Funktion:</th>
+                    <td><select class="control" id="use-cases"></select></td>
+                    <td class="description">Die Funktion, die trainiert werden soll.</td>
                 </tr>
                 <tr>
-                    <td>
-                        <select class="control" id="hidden-neurons"></select>
-                    </td>
-                    <td>
-                        <select class="control" id="output-neurons"></select>
-                    </td>
-                    <td>
-                        <button class="control" id="reset-button">Reset</button>
-                    </td>
-                    <td class="data-out" id="train-info">
-                    </td>
+                    <th>Trainingspunkte:</th>
+                    <td><input class="control" id="number-of-samples" value="73"></input></td>
+                    <td class="description">Die Anzahl der Trainingspunkte zum Anlernen des Netzes.</td>
+                </tr>
+                <tr>
+                    <th>Rauschen:</th>
+                    <td><input class="check" type="checkbox" id="noisy-samples"> aktivieren</input></td>
+                    <td class="description">Sollen die Trainingspunkte verrauscht werden?</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td><button class="control" id="generate-samples">Trainingsdaten erstellen</button></td>
+                    <td class="description">Eine neue Menge an Trainingsdaten generieren und die Zielfunktion einstellen.</td>
+                </tr>
+            </table>
+            <hr/>
+            <table class="control">
+                <tr>
+                    <th>Verdeckte Schichten:</th>
+                    <td><select class="control" id="hidden-neurons"></select></td>
+                    <td class="description">Die Aktivierungsfunktion in den verdeckten Schichten.</td>
+                </tr>
+                <tr>
+                    <th>Netzgröße:</th>
+                    <td><input class="control" id="hidden-sizes" value="3,4,2"></input></td>
+                    <td class="description">Die Anzahl und Größe der verdeckten Schichten (z.B.  "3,4,2").</td>
+                </tr>
+                <tr>
+                    <th>Ausgabeschicht:</th>
+                    <td><select class="control" id="output-neurons"></select></td>
+                    <td class="description">Die Aktivierungsfunktion in der Ausgabeschicht.</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td><button class="control" id="create-network">Netzwerk erstellen</button></td>
+                    <td class="description">Das neuronale Netz erstellen und zurücksetzen.</td>
+                </tr>
+            </table>
+            <hr/>
+            <table class="control">
+                <tr>
+                    <th>Eta-Parameter:</th>
+                    <td><input class="control" id="eta-parameter" value="0.00001"></input></td>
+                    <td class="description">Die Trainingsschrittweite.</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td><button class="control" id="train-button">Netzwerk trainieren</button></td>
+                    <td class="description">Training start oder stoppen.</td>
+                </tr>
+                <tr>
+                    <th>Score:</th>
+                    <td class="data-out" id="train-info"></td>
+                    <td class="description">Der durchschnittliche quadratische Fehler der Trainingspunkte.</td>
                 </tr>
             </table>
             <h2>Netzwerkausgabe</h2>
