@@ -15,7 +15,8 @@ RELEASE="$(rpm -E %fedora)"
 # this installs a package from fedora repos
 rpm-ostree install \
 	screen \
-	distrobox
+	distrobox \
+        dbus-daemon
 
 #git clone https://github.com/telekom/ki-in-schulen.git /usr/share/ki-in-schulen
 #sed -i 's,/usr/local/share/ki-in-schulen/,/usr/share/ki-in-schulen/,' /usr/share/ki-in-schulen/Calliope-Rennspiel/Python/ki-gui-lin.py
