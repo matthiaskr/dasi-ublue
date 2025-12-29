@@ -1,3 +1,9 @@
 #!/bin/sh
 
-rpm-ostree rebase ostree-image-signed:docker://ghcr.io/matthiaskr/dasi-ublue:latest || true
+tag=main
+if [ -f /etc/dasi-tag ]
+then
+    tag="$(cat /etc/dasi-tag)"
+fi
+
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/matthiaskr/dasi-ublue:$tag
