@@ -16,7 +16,8 @@ RELEASE="$(rpm -E %fedora)"
 rpm-ostree install \
 	screen \
 	distrobox \
-        dbus-daemon
+        dbus-daemon \
+	java-25-openjdk
 
 #git clone https://github.com/telekom/ki-in-schulen.git /usr/share/ki-in-schulen
 #sed -i 's,/usr/local/share/ki-in-schulen/,/usr/share/ki-in-schulen/,' /usr/share/ki-in-schulen/Calliope-Rennspiel/Python/ki-gui-lin.py
