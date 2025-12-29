@@ -57,11 +57,15 @@ jobs:
               BUILD_TAGS+=("${TAG}-${TIMESTAMP}")
           done
 
-          BUILD_TAGS+=("${TIMESTAMP}")
-          BUILD_TAGS+=("latest")
-
           if [[ "${{ github.event_name }}" != "pull_request" ]]; then
-              BUILD_TAGS+=("${GITHUB_REF##*/}")
+              branch=${GITHUB_REF##*/}
+
+              BUILD_TAGS+=("${branch}")
+
+              if [ "${branch}" == "main" ]; then
+                  BUILD_TAGS+=("${TIMESTAMP}")
+                  BUILD_TAGS+=("latest")
+              fi
           fi
 
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
