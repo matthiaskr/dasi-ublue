@@ -137,3 +137,7 @@ div.output {
     justify-content: center;
     width: 100%;
 }
+
+div.legal {
+    font-size: .8em;
+}

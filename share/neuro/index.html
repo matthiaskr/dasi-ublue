@@ -7,84 +7,114 @@
         <script type="text/javascript" charset="utf-8" src="js/neuro-web.js"></script>
     </head>
     <body onload="main()">
-        <div id="continuous">
-            <h1>Simulation neuronaler Netze</h1>
-            <table class="control">
-                <tr>
-                    <th>Funktion:</th>
-                    <td><select class="control" id="use-cases"></select></td>
-                    <td class="description">Die Funktion, die trainiert werden soll.</td>
-                </tr>
-                <tr>
-                    <th>Trainingspunkte:</th>
-                    <td><input class="control" id="number-of-samples" value="73"></input></td>
-                    <td class="description">Die Anzahl der Trainingspunkte zum Anlernen des Netzes.</td>
-                </tr>
-                <tr>
-                    <th>Rauschen:</th>
-                    <td><input class="check" type="checkbox" id="noisy-samples"> aktivieren</input></td>
-                    <td class="description">Sollen die Trainingspunkte verrauscht werden?</td>
-                </tr>
-                <tr>
-                    <th></th>
-                    <td><button class="control" id="generate-samples">Trainingsdaten erstellen</button></td>
-                    <td class="description">Eine neue Menge an Trainingsdaten generieren und die Zielfunktion einstellen.</td>
-                </tr>
-            </table>
-            <hr/>
-            <table class="control">
-                <tr>
-                    <th>Verdeckte Schichten:</th>
-                    <td><select class="control" id="hidden-neurons"></select></td>
-                    <td class="description">Die Aktivierungsfunktion in den verdeckten Schichten.</td>
-                </tr>
-                <tr>
-                    <th>Netzgröße:</th>
-                    <td><input class="control" id="hidden-sizes" value="3,4,2"></input></td>
-                    <td class="description">Die Anzahl und Größe der verdeckten Schichten (z.B.  "3,4,2").</td>
-                </tr>
-                <tr>
-                    <th>Ausgabeschicht:</th>
-                    <td><select class="control" id="output-neurons"></select></td>
-                    <td class="description">Die Aktivierungsfunktion in der Ausgabeschicht.</td>
-                </tr>
-                <tr>
-                    <th></th>
-                    <td><button class="control" id="create-network">Netzwerk erstellen</button></td>
-                    <td class="description">Das neuronale Netz erstellen und zurücksetzen.</td>
-                </tr>
-            </table>
-            <hr/>
-            <table class="control">
-                <tr>
-                    <th>Eta-Parameter:</th>
-                    <td><input class="control" id="eta-parameter" value="0.00001"></input></td>
-                    <td class="description">Die Trainingsschrittweite.</td>
-                </tr>
-                <tr>
-                    <th></th>
-                    <td><button class="control" id="train-button">Netzwerk trainieren</button></td>
-                    <td class="description">Training starten oder stoppen.</td>
-                </tr>
-                <tr>
-                    <th>Score:</th>
-                    <td class="data-out" id="train-info"></td>
-                    <td class="description">Der durchschnittliche quadratische Fehler der Trainingspunkte.</td>
-                </tr>
-            </table>
-            <h2>Netzwerkausgabe</h2>
-            <div class="output">
-                <canvas id="function-output" width="1280" height="400"></canvas>
+        <h1>Simulation neuronaler Netze</h1>
+        <table class="control">
+            <tr>
+                <th>Funktion:</th>
+                <td><select class="control" id="use-cases"></select></td>
+                <td class="description">Die Funktion, die trainiert werden soll.</td>
+            </tr>
+            <tr>
+                <th>Trainingspunkte:</th>
+                <td><input class="control" id="number-of-samples" value="73"></input></td>
+                <td class="description">Die Anzahl der Trainingspunkte zum Anlernen des Netzes.</td>
+            </tr>
+            <tr>
+                <th>Rauschen:</th>
+                <td><input class="check" type="checkbox" id="noisy-samples"> aktivieren</input></td>
+                <td class="description">Sollen die Trainingspunkte verrauscht werden?</td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><button class="control" id="generate-samples">Trainingsdaten erstellen</button></td>
+                <td class="description">Eine neue Menge an Trainingsdaten generieren und die Zielfunktion einstellen.</td>
+            </tr>
+        </table>
+        <hr/>
+        <table class="control">
+            <tr>
+                <th>Verdeckte Schichten:</th>
+                <td><select class="control" id="hidden-neurons"></select></td>
+                <td class="description">Die Aktivierungsfunktion in den verdeckten Schichten.</td>
+            </tr>
+            <tr>
+                <th>Netzgröße:</th>
+                <td><input class="control" id="hidden-sizes" value="3,4,2"></input></td>
+                <td class="description">Die Anzahl und Größe der verdeckten Schichten (z.B.  "3,4,2").</td>
+            </tr>
+            <tr>
+                <th>Ausgabeschicht:</th>
+                <td><select class="control" id="output-neurons"></select></td>
+                <td class="description">Die Aktivierungsfunktion in der Ausgabeschicht.</td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><button class="control" id="create-network">Netzwerk erstellen</button></td>
+                <td class="description">Das neuronale Netz erstellen und zurücksetzen.</td>
+            </tr>
+        </table>
+        <hr/>
+        <table class="control">
+            <tr>
+                <th>Eta-Parameter:</th>
+                <td><input class="control" id="eta-parameter" value="0.00001"></input></td>
+                <td class="description">Die Trainingsschrittweite.</td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><button class="control" id="train-button">Netzwerk trainieren</button></td>
+                <td class="description">Training starten oder stoppen.</td>
+            </tr>
+            <tr>
+                <th>Score:</th>
+                <td class="data-out" id="train-info"></td>
+                <td class="description">Der durchschnittliche quadratische Fehler der Trainingspunkte.</td>
+            </tr>
+        </table>
+        <h2>Netzwerkausgabe</h2>
+        <div class="output">
+            <canvas id="function-output" width="1280" height="400"></canvas>
+        </div>
+        <h2>Netzwerkaufbau</h2>
+        <div class="network-output">
+            <canvas class="network" id="network-canvas" width="940" height="640"></canvas>
+            <div class="network-actfuncs">
+                <canvas class="actfunc" id="network-input" width="200" height="200"></canvas>
+                <canvas class="actfunc" id="network-hidden" width="200" height="200"></canvas>
+                <canvas class="actfunc" id="network-output" width="200" height="200"></canvas>
             </div>
-            <h2>Netzwerkaufbau</h2>
-            <div class="network-output">
-                <canvas class="network" id="network-canvas" width="940" height="640"></canvas>
-                <div class="network-actfuncs">
-                    <canvas class="actfunc" id="network-input" width="200" height="200"></canvas>
-                    <canvas class="actfunc" id="network-hidden" width="200" height="200"></canvas>
-                    <canvas class="actfunc" id="network-output" width="200" height="200"></canvas>
-                </div>
-            </div>
+        </div>
+        <hr/>
+        <div class="legal">
+            <h3>Lizenzen / Legal</h3>
+            <ul>
+                <li>
+                    THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR
+                    IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+                    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+                    PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL JCRAFT,
+                    INC. OR ANY CONTRIBUTORS TO THIS SOFTWARE BE LIABLE FOR ANY
+                    DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+                    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+                    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+                    DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
+                    AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+                    LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+                    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+                    ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+                </li>
+                <li>
+                    This product includes software developed by Alexey Andreev
+                    and teavm.org
+                    (<a href="https://teavm.org">https://teavm.org</a>,
+                    <a href="APACHE-2.0-LICENSE.txt">Apache License Version 2.0</a>).
+                </li>
+                <li>
+                    This product includes software developed by jspecify.dev
+                    (<a href="https://jspecify.dev">https://jspecify.dev</a>,
+                    <a href="APACHE-2.0-LICENSE.txt">Apache License Version 2.0</a>).
+                </li>
+            </ul>
         </div>
     </body>
 </html>
