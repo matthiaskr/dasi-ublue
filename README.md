@@ -25,15 +25,11 @@
    Verwende einen beliebigen Benutzernamen und Passwort (wird später resettet).
    Sprache auf Deutsch und Zeitzone auf Europe/Berlin stellen.
    Benutzer und Systemsprache werden erst nach dem ersten Neustart gesetzt.
-2. Wenn die Installation abgeschlossen ist: öffne ein Terminal-Fenster
-   (Konsole bei Kionite).
-   Der Computer muss mit dem Internet verbunden sein, um forzufahren.
-   Dort
-```shell
-touch /var/tmp/reset-users
-rpm-ostree rebase ostree-unverified-registry:ghcr.io/matthiaskr/dasi-ublue:main -r
-```
-   eingeben und ausführen.
+2. Wenn die Installation abgeschlossen ist, muss für den folgenden Schritt
+   der Computer mit dem Internet verbunden sein, um forzufahren.
+   Öffne ein Terminal/Eingabeaufforderung (heißt Terminal in Silverblue, Konsole in Kionite)
+   und führe dort folgendes Kommando aus:
+   `touch /var/tmp/reset-users ; rpm-ostree rebase ostree-unverified-registry:ghcr.io/matthiaskr/dasi-ublue:main -r`.
    Der Computer startet automatisch neu, wenn dies erfolgreich durchgeführt
    wurde.
 3. Danach ist das System fast einsatzbereit: es müssen nurnoch Zusatzpakete
