@@ -2,7 +2,7 @@
 
 ## Änderungen
 
-* **Unreleased**
+* **2026-01-12**
   * Calliope-Rennspiel wird unter Benutzer "Schüler" installiert
     (die Benutzer müssen dazu mittels `dasi-reset-users` resettet werden).
 
