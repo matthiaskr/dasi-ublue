@@ -3,7 +3,9 @@
 ## Änderungen
 
 * **2026-01-10**
-  * Update der Basis auf Fedora Kionite 43
+  * Update der Basis auf Fedora Kionite 43.
+  * Einfacher wechsel zwischen stabiler Version und der Entwicklungsversion
+    (siehe unten).
 
 * **2025-10-01**
   * Manuell installierte Software wird automatisch gelöscht (siehe auch unten).
@@ -63,6 +65,24 @@ Dabei bitte die Dokumentation insbesondere zur Vertrauenswürdigkeit einzelner P
 * Aus dem Home-Verzeichnis sollte vor jedem Rennspiel-Workshop das Verzeichnis
   `CalliopeRennspiel` gelöscht werden.  Dies ist auch bei Installationen vor
   05.06.2025 notwendig, um alte inkompatibele Konfiguration zu entfernen.
+
+## git-branches
+
+* `main`: aktuelles stabiles System
+* `next`: aktuelle Entwicklung
+
+Um zwischen beiden einfach wechseln zu können, muss eine Version nach
+10.01.2026 installiert sein.
+Dazu einfach `rpm-ostree upgrade -r` ausführen.
+Das System startet automatisch neu und ist danach auf dem aktuellen Stand.
+
+### Wechsel von `main` zu `next`:
+* die Datei `/etc/dasi-tag` anlegen und dort `next` eintragen (einfache Textdatei)
+* `sudo dasi-repocheck` ausführen und danach das System neu starten
+
+### Wechsel von `next` zu `main`:
+* die Datei `/etc/dasi-tag` löschen oder dort `main` eintragen
+* `sudo dasi-repocheck` ausführen und danach das System neu starten
 
 ## Legales
 
