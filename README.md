@@ -2,7 +2,7 @@
 
 ## Änderungen
 
-* **Neu**
+* **2026-01-11**
   * Möglichkeit Benutzer zu resetten (siehe unten).
 
 * **2026-01-10**
