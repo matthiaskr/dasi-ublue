@@ -10,7 +10,7 @@ fi
 getent passwd | awk -F: '{if ($3 >= 1000 && $3 < 65000) print $1}' | xargs -L1 userdel -r
 getent group | awk -F: '{if ($3 >= 1000 && $3 < 65000) print $1}' | xargs -L1 groupdel
 
-useradd -c Administrator -G wheel -p '$y$j9T$iUylliD/EKYdJRd/AShiJ.$2sv2enZwRVr9vRsEVk.rIwkWeVSGbAZnNrgoop7ehC/' -m admin
-useradd -c Schüler -p '$y$j9T$Vj4juPT86S8GtjnabVwhh0$WOp54Ro9gtrKrWblNPV0Z6idgJERkAP8tGLYR5F2/I6' -m student
+useradd -c Schüler -u 1000 -p '$y$j9T$Vj4juPT86S8GtjnabVwhh0$WOp54Ro9gtrKrWblNPV0Z6idgJERkAP8tGLYR5F2/I6' -m student
+useradd -c Administrator -u 9001 -G wheel -p '$y$j9T$iUylliD/EKYdJRd/AShiJ.$2sv2enZwRVr9vRsEVk.rIwkWeVSGbAZnNrgoop7ehC/' -m admin
 
 rm -f $resetflag

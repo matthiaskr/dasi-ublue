@@ -2,8 +2,13 @@
 
 ## Änderungen
 
+* **Unreleased**
+  * Calliope-Rennspiel wird unter Benutzer "Schüler" installiert
+    (die Benutzer müssen dazu mittels `dasi-reset-users` resettet werden).
+
 * **2026-01-11**
-  * Möglichkeit Benutzer zu resetten (siehe unten).
+  * Möglichkeit Benutzer zu resetten (siehe unten; das Calliope-Rennspiel wird
+    für den Administrator installiert).
 
 * **2026-01-10**
   * Update der Basis auf Fedora Kionite 43.
@@ -17,32 +22,59 @@
 ## Installation
 
 1. Lade Fedora Silverblue (oder ein anderes Fedora Atomic) Installationsmedium von [hier](https://getfedora.org) herunter und folge der Installationsanleitung.
-   Verwende den vereinbarten Benutzernamen und Passwort.
+   Verwende einen beliebigen Benutzernamen und Passwort (wird später resettet).
    Sprache auf Deutsch und Zeitzone auf Europe/Berlin stellen.
-2. Wenn die Installation abgeschlossen ist, nach dem neustarten ein Terminal-Fenster öffnen.
-   Dort `rpm-ostree rebase ostree-unverified-registry:ghcr.io/matthiaskr/dasi-ublue:latest` ausführen.
-   Nachdem das Kommando abgeschlossen ist, den Rechner neustarten.
-   Der Computer muss mit dem Internet verbunden sein, um das Kommando erfolgreich auszuführen.
+   Benutzer und Systemsprache werden erst nach dem ersten Neustart gesetzt.
+2. Wenn die Installation abgeschlossen ist: öffne ein Terminal-Fenster
+   (Konsole bei Kionite).
+   Der Computer muss mit dem Internet verbunden sein, um forzufahren.
+   Dort
+```shell
+touch /var/tmp/reset-users
+rpm-ostree rebase ostree-unverified-registry:ghcr.io/matthiaskr/dasi-ublue:main -r
+```
+   eingeben und ausführen.
+   Der Computer startet automatisch neu, wenn dies erfolgreich durchgeführt
+   wurde.
+3. Danach ist das System fast einsatzbereit: es müssen nurnoch Zusatzpakete
+   (flatpak) instaliert werden.
+   Dies geschieht automatisch, sofern der Computer mit dem Internet verbunden
+   ist.
+   Alternativ kann den Vorgang durch `sudo dasi-update` beschleunigen (in einem
+   Terminal/Konsole).
 
-Danach ist das System aufgesetzt.
-Zusätzliche Programme werden automatisch nach dem Neustart installiert (nach einer kleinen Pause).
-Möchte man dies beschleunigen, kann man **nach dem Neustart** in einem Terminal einfach `dasi-update` ausführen.
+## Bekannte Probleme
 
-## Reset der Benutzer
+* Manchmal funktioniert der erste Login nicht und man kommt direkt zur Login-Maske zurück.
+  In diesem Fall einfach erneut einloggen.
+  Der zweite Versuch sollte funktionieren.
+* Datenträger werden nicht automatisch eingebunden.
+  Das gilt **auch für Calliope**.
+  Wenn man das KI-Rennspiel verwendet, sollte man immer den Dateimanager offen haben.
+  Bevor man einen Calliope neuprogrammiert, klickt man einfach einmal auf den Datenträger mit Namen *MINI*.
+  Dadurch wird er eingehängt und die Rennspiel-GUI ist in der Lage den Calliope zu programmieren.
+* Aus dem Home-Verzeichnis sollte vor jedem Rennspiel-Workshop das Verzeichnis
+  `CalliopeRennspiel` gelöscht werden.  Dies ist auch bei Installationen vor
+  05.06.2025 notwendig, um alte inkompatibele Konfiguration zu entfernen.
+
+## Zusätzliche Möglichkeiten
+
+Alle folgenden Aktionen müssen mit dem Administrator ausgeführt werden.
+
+### Reset der Benutzer
 
 Mittels `dasi-reset-users` wird das System zum Reset der Benutzer angewiesen.
 Beim nächsten Neustart werden alle Benutzer gelöscht und mit den Standardpasswörtern neu angelegt.
 
-## Update des Systems
+### Update des Systems
 
 Das System sucht regelmäßig nach Updates, sofern eine Netzwerkverbindung existiert.
 Möchte man sicherstellen, dass die Version auf einem Notebook aktuell ist, kann man wie folgt vorgehen:
 
-1. `rpm-ostree update` in einem Terminal ausführen.
-2. Computer neustarten.
-3. `dasi-update` in einem Terminal ausführen.
+1. `rpm-ostree update -r` in einem Terminal ausführen (der Computer startet nach dem Update automatisch neu).
+2. `sudo dasi-update` in einem Terminal ausführen.
 
-## Selber Software installieren
+### Selber Software installieren
 
 Software ann von [*flathub*](https://flathub.org) installiert werden.
 Dazu muss erst einmal das System konfiguriert werden, dass manuell installiere
@@ -60,21 +92,7 @@ Nach dem `dasi-suspend-removal` ausgeführt wurde, können Softwarepakete von
 Dazu einfach der Anleitung auf der Webseite folgen.
 Dabei bitte die Dokumentation insbesondere zur Vertrauenswürdigkeit einzelner Pakete beachten.
 
-## Bekannte Probleme
-
-* Manchmal funktioniert der erste Login nicht und man kommt direkt zur Login-Maske zurück.
-  In diesem Fall einfach erneut einloggen.
-  Der zweite Versuch sollte funktionieren.
-* Datenträger werden nicht automatisch eingebunden.
-  Das gilt **auch für Calliope**.
-  Wenn man das KI-Rennspiel verwendet, sollte man immer den Dateimanager offen haben.
-  Bevor man einen Calliope neuprogrammiert, klickt man einfach einmal auf den Datenträger mit Namen *MINI*.
-  Dadurch wird er eingehängt und die Rennspiel-GUI ist in der Lage den Calliope zu programmieren.
-* Aus dem Home-Verzeichnis sollte vor jedem Rennspiel-Workshop das Verzeichnis
-  `CalliopeRennspiel` gelöscht werden.  Dies ist auch bei Installationen vor
-  05.06.2025 notwendig, um alte inkompatibele Konfiguration zu entfernen.
-
-## git-branches
+### git-branches
 
 * `main`: aktuelles stabiles System
 * `next`: aktuelle Entwicklung
