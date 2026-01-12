@@ -2,6 +2,9 @@
 
 ## Änderungen
 
+* **2026-01-10**
+  * Update der Basis auf Fedora Kionite 43
+
 * **2025-10-01**
   * Manuell installierte Software wird automatisch gelöscht (siehe auch unten).
   * Alle Zusatzsoftware wird aus dem *flathub* Repository installiert.
