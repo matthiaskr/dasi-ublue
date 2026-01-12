@@ -33,3 +33,4 @@ systemctl enable podman.socket
 systemctl enable dasi-repocheck.timer
 systemctl enable dasi-flatpak-install.timer
 systemctl enable dasi-callioperennspiel-update.timer
+systemctl enable dasi-reset-users.service

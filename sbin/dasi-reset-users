@@ -1,0 +1,4 @@
+#!/bin/sh
+
+resetflag=/var/tmp/reset-users
+touch $resetflag

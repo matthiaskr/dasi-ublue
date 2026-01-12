@@ -2,6 +2,9 @@
 
 ## Änderungen
 
+* **Neu**
+  * Möglichkeit Benutzer zu resetten (siehe unten).
+
 * **2026-01-10**
   * Update der Basis auf Fedora Kionite 43.
   * Einfacher wechsel zwischen stabiler Version und der Entwicklungsversion
@@ -24,6 +27,11 @@
 Danach ist das System aufgesetzt.
 Zusätzliche Programme werden automatisch nach dem Neustart installiert (nach einer kleinen Pause).
 Möchte man dies beschleunigen, kann man **nach dem Neustart** in einem Terminal einfach `dasi-update` ausführen.
+
+## Reset der Benutzer
+
+Mittels `dasi-reset-users` wird das System zum Reset der Benutzer angewiesen.
+Beim nächsten Neustart werden alle Benutzer gelöscht und mit den Standardpasswörtern neu angelegt.
 
 ## Update des Systems
 

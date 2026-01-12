@@ -1,0 +1,19 @@
+[Unit]
+Description=Reset Users
+ConditionPathIsReadWrite=/etc
+
+After=systemd-remount-fs.service
+After=systemd-sysusers.service systemd-tmpfiles-setup.service
+After=systemd-vconsole-setup.service
+
+Before=multiuser.target
+Conflicts=shutdown.target
+Before=shutdown.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/sbin/dasi-reset-users-at-bootup
+
+[Install]
+WantedBy=local-fs.target
