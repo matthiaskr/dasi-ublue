@@ -4,6 +4,7 @@ set -e
 
 if [ $(id -u) -ne 1000 ]
 then
+    cd /home
     exec sudo -u $(id -n -u 1000) "$0" "$@"
 fi
 
