@@ -2,6 +2,11 @@
 
 set -e
 
+if [ $(id -u) -ne 1000 ]
+then
+    exec sudo -u $(id -n -u 1000) "$0" "$@"
+fi
+
 loginctl enable-linger $(id -u)
 trap "loginctl disable-linger $(id -u)" EXIT
 
