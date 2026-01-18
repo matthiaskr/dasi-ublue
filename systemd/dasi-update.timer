@@ -3,8 +3,9 @@ Description=Install flatpak packages and Calliope Rennspiel for DASI
 
 [Timer]
 #OnCalendar=*-*-* *:00:00
-RandomizedDelaySec=10m
-OnBootSec=5m
+RandomizedDelaySec=1m
+OnActiveSec=5m
+OnUnitActiveSec=4h
 Persistent=true
 
 [Install]
