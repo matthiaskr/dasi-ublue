@@ -1,5 +1,5 @@
 [Unit]
-Description=Install flatpak packages for DASI
+Description=Install flatpak packages and Calliope Rennspiel for DASI
 
 [Timer]
 #OnCalendar=*-*-* *:00:00

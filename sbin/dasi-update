@@ -2,6 +2,8 @@
 
 set -e
 
+initial_install=/var/tmp/initial-install
+
 loginctl enable-linger $(id -u)
 trap "loginctl disable-linger $(id -u)" EXIT
 
@@ -11,3 +13,9 @@ sudo dbus-run-session flatpak update --system -y
 dbus-run-session flatpak update --user -y
 
 dasi-callioperennspiel-update
+
+if [ -f $initial_install ]
+then
+    rm $initial_install
+    sudo systemctl poweroff
+fi
