@@ -1,8 +1,12 @@
 #!/bin/sh
 
 resetflag=/var/tmp/reset-users
+lastused=/var/.lastused.timestamp
+reset_age=$((60*60*24*14))
 
-if [ ! -f $resetflag ]
+trap "date '+%s' | sudo tee $lastused" EXIT
+
+if [ ! -f $resetflag ] && ([ ! -f $lastused ] || [ "$(cat $lastused)" -gt $(( $(date '+%s') - $reset_age )) ])
 then
     exit 0
 fi
