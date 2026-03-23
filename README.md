@@ -2,6 +2,10 @@
 
 ## Änderungen
 
+* **2026-03-23**
+  * Wenn das Gerät länger als 336 Stunden (14 Tage) nicht verwendet wird,
+    werden die Benutzer automatisch beim nächsten Start resettet.
+
 * **2026-01-12**
   * Calliope-Rennspiel wird unter Benutzer "Schüler" installiert
     (die Benutzer müssen dazu mittels `dasi-reset-users` resettet werden).
