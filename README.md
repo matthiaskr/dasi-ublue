@@ -62,6 +62,8 @@ Alle folgenden Aktionen müssen mit dem Administrator ausgeführt werden.
 Mittels `dasi-reset-users` wird das System zum Reset der Benutzer angewiesen.
 Beim nächsten Neustart werden alle Benutzer gelöscht und mit den Standardpasswörtern neu angelegt.
 
+Die Benutzer werden auch automatisch gelöscht, falls das System das letzte mal vor 336 Stunden (14 Tage) gestartet wurde.
+
 ### Update des Systems
 
 Das System sucht regelmäßig nach Updates, sofern eine Netzwerkverbindung existiert.
