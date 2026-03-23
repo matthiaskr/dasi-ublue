@@ -6,7 +6,7 @@ reset_age=$((60*60*24*14))
 
 trap "date '+%s' | sudo tee $lastused" EXIT
 
-if [ ! -f $resetflag ] && ([ ! -f $lastused ] || [ "$(cat $lastused)" -lt $(( $(date '+%s') - $reset_age )) ])
+if [ ! -f $resetflag ] && ([ ! -f $lastused ] || [ "$(cat $lastused)" -gt $(( $(date '+%s') - $reset_age )) ])
 then
     exit 0
 fi
