@@ -2,6 +2,10 @@
 
 ## Änderungen
 
+* **2026-05-02**
+  * Behebung eines Fehlers, der verhindert hat, dass das Calliope-Rennspiel
+    wie gewünscht funktioniert.
+
 * **2026-03-23**
   * Wenn das Gerät länger als 336 Stunden (14 Tage) nicht verwendet wird,
     werden die Benutzer automatisch beim nächsten Start resettet.
