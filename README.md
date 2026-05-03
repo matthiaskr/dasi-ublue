@@ -2,6 +2,9 @@
 
 ## Änderungen
 
+* **2026-05-03**
+  * Behebung des Fehlers auch für Calliope Mini v2.
+
 * **2026-05-02**
   * Behebung eines Fehlers, der verhindert hat, dass das Calliope-Rennspiel
     wie gewünscht funktioniert.
