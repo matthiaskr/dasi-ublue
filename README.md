@@ -2,6 +2,10 @@
 
 ## Änderungen
 
+* **Nächstes Release**
+  * Update auf Fedora 44 Basis.
+  * Schließen des Notebooks führt zu einem Ausschalten des Geräts.
+
 * **2026-05-03**
   * Behebung des Fehlers auch für Calliope Mini v2.
 
