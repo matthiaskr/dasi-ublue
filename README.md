@@ -2,7 +2,7 @@
 
 ## Änderungen
 
-* **Nächstes Release**
+* **2026-09-08**
   * Update auf Fedora 44 Basis.
   * Schließen des Notebooks führt zu einem Ausschalten des Geräts.
 
